@@ -1,0 +1,22 @@
+<Window formName = "My First TKML">
+    <Label>Hello World!</Label>
+    <Label imageSrc="C:\Users\lenovo\Pictures\Wallpapers\AbandonedVillageChina.jpg" imageSide="center" imageHeight="50" imageWidth="200" 
+        fg="yellow" bg="black">
+        Welcome TKML!!
+    </Label>
+    <Button>Test btn</Button>
+    <RadioButton name="Gender" label="Python" value="1" position="absolute" x="30" y="40"/>
+    <RadioButton name="Gender" label="Perl" value="2" />
+    <RadioButton name="ender" label="Python" value="1" />
+    <RadioButton name="ender" label="Python" value="2"/>
+    <CheckBox name="breakfast" label="Breakfast?" />
+    <CheckBox name="lunch" label="Lunch?" />
+    <CheckBox name="dinner" label="Dinner?" />
+    <Canvas height="200" width="500" border="5" bg="white" >
+        <Line endpt="(0, 0, 50, 20)" fill="white" width="10"/>    
+        <Line endpt="(0, 100, 50, 80)" fill="white" width="10"/>
+        <Rect fixpt="(50, 80)" width="100" height="60" fill="red"/>
+        <Rect fixpt="(70, 90)" width="50" height="30" fill="blue"/>
+        <Text xy = "(200, 100)" fill="black">TKML</Text>
+    </Canvas>
+</Window>
