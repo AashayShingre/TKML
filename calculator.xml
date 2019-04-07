@@ -1,0 +1,23 @@
+<Window formName="CALCULATOR">
+    <Canvas bg="white" height="100" sticky="NSEW" fill="both">
+
+    </Canvas>
+    <Frame layout="grid" fill="both" expand="True" bg="Red">
+        <Button row="1" column="0" sticky="NSEW">1</Button>
+        <Button row="1" column="1" sticky="NSEW">2</Button>
+        <Button row="1" column="2" sticky="NSEW">3</Button>
+        <Button row="1" column="3" sticky="NSEW">+</Button>
+        <Button row="2" column="0" sticky="NSEW">4</Button>
+        <Button row="2" column="1" sticky="NSEW">5</Button>
+        <Button row="2" column="2" sticky="NSEW">6</Button>
+        <Button row="2" column="3" sticky="NSEW">-</Button>
+        <Button row="3" column="0" sticky="NSEW">7</Button>
+        <Button row="3" column="1" sticky="NSEW">8</Button>
+        <Button row="3" column="2" sticky="NSEW">9</Button>
+        <Button row="3" column="3" sticky="NSEW">*</Button>
+        <Button row="4" column="0" sticky="NSEW">.</Button>
+        <Button row="4" column="1" sticky="NSEW">0</Button>
+        <Button row="4" column="2" sticky="NSEW" id="evaluate">=</Button>
+        <Button row="4" column="3" sticky="NSEW">/</Button>
+    </Frame>
+</Window>

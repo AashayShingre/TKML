@@ -1,6 +1,16 @@
-<Window formName = "My First TKML">
+<Window formName = "My First TKML" layout="pack">
+    <Menu>
+        <MenuOption>Pink</MenuOption>
+        <MenuOption>Blue</MenuOption>
+        <MenuOption>Red</MenuOption>
+        <Menu name="Dark">
+            <MenuOption>Black</MenuOption>
+            <MenuOption>Grey</MenuOption>
+            <MenuOption>Dark Metal</MenuOption>
+        </Menu>
+    </Menu>
     <Label>Hello World!</Label>
-    <Label imageSrc="C:\Users\lenovo\Pictures\Wallpapers\AbandonedVillageChina.jpg" imageSide="center" imageHeight="50" imageWidth="200" 
+    <Label imageSrc="C:\Users\lenovo\Pictures\Wallpapers\AbandonedVillageChina.jpg" compound="center" imageHeight="50" imageWidth="200" 
         fg="yellow" bg="black">
         Welcome TKML!!
     </Label>
@@ -19,4 +29,14 @@
         <Rect fixpt="(70, 90)" width="50" height="30" fill="blue"/>
         <Text xy = "(200, 100)" fill="black">TKML</Text>
     </Canvas>
+    <Frame bg="red" bd="5" cursor="dot" height="150" width="500">
+        <Button>Test btn</Button>
+        <Label>label 1</Label>
+        <Label>label 2</Label>
+    </Frame>
+    <Frame bd="5">
+        <Button>Some button</Button>
+        <Label>label 1</Label>
+        <Label>label 2</Label>
+    </Frame>
 </Window>
