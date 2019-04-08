@@ -1,7 +1,10 @@
 <Window formName="CALCULATOR">
-    <Canvas bg="white" height="100" sticky="NSEW" fill="both">
-
-    </Canvas>
+    <Menu>
+        <MenuOption>Clear</MenuOption>
+    </Menu>
+    <Frame bg="white" height="100" fill="both" padx="10" pady="10">
+        <Label side="left" fill="both" justify="left" bg="white">0</Label>
+    </Frame>
     <Frame layout="grid" fill="both" expand="True" bg="Red">
         <Button row="1" column="0" sticky="NSEW">1</Button>
         <Button row="1" column="1" sticky="NSEW">2</Button>

@@ -19,7 +19,7 @@ class TKML:
         if element.tag == "Window":
             self.build = tk.Tk(screenName="Test1", baseName="test-1", className=element.attrib['formName'])
             parent = self.build
-            
+            parent.minsize(500,300)
             self.tags.setdefault(element.tag,[]).append(parent)
         elif element.tag == "Label":
             #we are not assuming any child for it anyways
@@ -96,12 +96,12 @@ class TKML:
             parent.create_rectangle(*points, int(element.attrib['height']), int(element.attrib['width']), fill=element.attrib['fill'])
         elif element.tag == "Text":
             if (isinstance(parent, tk.Canvas)):
-                points = eval(element.attrib['xy'])
-                parent.create_text(*points, text = element.text, fill=element.attrib['fill'])
+                points = eval(element.attrib.get('xy'))
+                parent.create_text(*points, text = element.text, fill=element.attrib.get('fill'))
             else:
                 print('text class not made yet')
         elif element.tag == "Frame" :
-            frame = tk.Frame(parent, bg=element.attrib.get('bg'))
+            frame = tk.Frame(parent, bg=element.attrib.get('bg'), height=element.attrib.get('height'), padx=element.attrib.get('padx'), pady=element.attrib.get('pady'))
             self.setLayout(frame, layout, element.attrib)
             parent = frame
             layout = element.attrib.get('layout')
@@ -123,6 +123,9 @@ class TKML:
                 menu = tk.Menu(parent)
                 parent.add_cascade(label=element.attrib.get("name"), menu=menu)
                 parent=menu
+                self.tags.setdefault(element.tag,[]).append(parent)
+                if 'id' in element.attrib : self.ids.setdefault(element.attrib['id'], []).append(parent)
+                if 'class' in element.attrib : self.ids.setdefault(element.attrib['class'], []).append(parent)
         elif element.tag == "MenuOption":
             parent.add_command(label=element.text)
             
@@ -143,16 +146,16 @@ class TKML:
         elif parentlayout == 'place':
             element.place(x=element.attrib.get('x'), y=attrib.get('y'))
         else: #even when the layout will be none
-            element.pack(fill=attrib.get('fill'), expand=attrib.get('expand'))
+            element.pack(fill=attrib.get('fill'), expand=attrib.get('expand'), side=attrib.get('side'))
 
     def getTag(self, name):
-        return self.tags
+        return self.tags.get(name)
 
-    def getClass(self):
-        return self.classes.get('name')
+    def getClass(self, name):
+        return self.classes.get(name)
     
-    def getID(self):
-        return self.ids.get('name')
+    def getID(self, name):
+        return self.ids.get(name)
 
     def getBuiltWindow(self):
         return self.build
