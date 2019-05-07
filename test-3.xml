@@ -1,0 +1,3 @@
+<Window formName="tk">
+    <Label>Hello World!</Label>
+</Window>
